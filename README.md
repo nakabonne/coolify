@@ -4,7 +4,7 @@ A command line tool that changes the vowel of the input character
 # Instllation
 
 ```
-$ go get https://github.com/ryonakao/coolify.git
+$ go get github.com/ryonakao/coolify
 ```
 
 # Usage
