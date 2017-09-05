@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"math/rand"
 	"os"
 	"time"
@@ -9,6 +10,7 @@ import (
 
 const (
 	duplicateVowel bool = true
+	removeVowel    bool = false
 )
 
 func randBool() bool {
@@ -29,6 +31,15 @@ func main() {
 					}
 				}
 			}
+			if vI >= 0 {
+				switch randBool() {
+				case duplicateVowel:
+					word = append(word[:vI+1], word[vI:]...)
+				case removeVowel:
+					word = append(word[:vI], word[vI+1:]...)
+				}
+			}
 		}
+		fmt.Println(string(word))
 	}
 }
